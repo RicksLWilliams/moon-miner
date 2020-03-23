@@ -40,7 +40,9 @@ function mine() {
 function clickUpgrade(item) {
   let elm = clickUpgrades[item];
 
-  if (cheese >= elm.price) {
+  if (cheese < elm.price) { 
+    return 
+  }
     cheese -= elm.price 
     elm.quantity++
     elm.price *= 2
@@ -55,7 +57,7 @@ function clickUpgrade(item) {
     } else {
       autoBonus +=elm.multiplier
     }
-  }
+  
 }
 
 function collectAutoUpgrades() {
